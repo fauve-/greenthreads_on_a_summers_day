@@ -7,6 +7,8 @@ just a fun project to while away an afternoon and learn about concurrency primit
 
 
 ###stuff to do l8r:
-figure out if the scheduler should await all routines before exiting the program
-maybe implement channels
-allow multiple worker threads to execute greenthreads (rofl good luck)
+-figure out if the scheduler should await all routines before exiting the program
+
+-maybe implement channels
+
+-allow multiple worker threads to execute greenthreads (rofl good luck)
