@@ -1,7 +1,6 @@
 #include "gthread.h"
 
 
-
 void gtinit(void){
 	gtcur = &gttbl[0];
 	gtcur->st = Running;
@@ -26,6 +25,7 @@ bool gtyield(void){
   
   p = gtcur;
   while (p->st != Ready) {
+    //rofl. the last is supposed to be NULL
     if (++p == &gttbl[MaxGThreads]){
       p = &gttbl[0];
     }

@@ -3,16 +3,14 @@
 
 semaphore* sema;
 
-
-
 void f(void) {
   static int x;
   int i, id;  
   id = ++x;
   for (i = 0; i < 10; i++) {
-    printf("%d %d\n", id, i);
     gtyield();
-  } 
+  }
+  printf("%d %d\n", id, i);
 }
 
 void g(void){
@@ -29,16 +27,19 @@ void h(void){
 }
 
 
+//uncomment those f's and find that we'll return before all gts have finished
+//a mystery to uncover!
+
 int main(void){
   sema = new_sema(1);
   gtinit();
-  //  gtgo(f);
-  //  gtgo(f);
   gtgo(g);
   gtgo(g);
   gtgo(g);
+  //gtgo(f);
   gtgo(h);
   gtgo(h);
+  //  gtgo(f);
   gtgo(h);
   gtgo(h);  
   gtret(1);

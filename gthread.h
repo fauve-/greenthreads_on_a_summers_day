@@ -37,7 +37,7 @@ void gt_swap(struct gt *old, struct gt* new);
 
 
 enum {
-	MaxGThreads = 8,
+	MaxGThreads = 16,
 	StackSize = 0x400000,
 };
 
